@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+
+# Bar & Defaults
+export DEFAULT_FONT="JetBrainsMono Nerd Font"
+export DEFAULT_STYLE="ExtraBold"
+export DEFAULT_SIZE="13.0"
+export DEFAULT_ICON_FONT="$DEFAULT_FONT:$DEFAULT_STYLE:$DEFAULT_SIZE"
+export DEFAULT_LABEL_FONT="$DEFAULT_FONT:$DEFAULT_STYLE:$DEFAULT_SIZE"
+export BAR_SEPARATOR_FONT="JetBrainsMono Nerd Font:Heavy:18.0"
+
+# Item - apple.sh
+export APPLE_ICON_FONT="JetBrainsMono Nerd Font:Heavy:16.0"
+
+# Item - spaces.sh
+export SPACES_ICON_FONT="$DEFAULT_ICON_FONT"
+export SPACES_LABEL_FONT="sketchybar-app-font:Regular:13.0"
+
+# Item - front_app.sh
+export FRONT_APP_ICON_FONT="$DEFAULT_ICON_FONT"
+export FRONT_APP_LABEL_FONT="$DEFAULT_LABEL_FONT"
+
+# Item - battery.sh
+export BATTERY_ICON_FONT="$DEFAULT_ICON_FONT"
+
+# Item - wifi.sh
+export WIFI_ICON_FONT="$DEFAULT_ICON_FONT"
+export WIFI_LABEL_FONT="$DEFAULT_LABEL_FONT"
+
+# Item - volume.sh
+export VOLUME_ICON_FONT="$DEFAULT_ICON_FONT"
+
+# Item - system.sh - default
+export SYSTEM_ICON_FONT="$DEFAULT_ICON_FONT"
+export SYSTEM_LABEL_FONT="$DEFAULT_LABEL_FONT"
+
+# Item - system.sh - cpu
+export SYSTEM_CPU_ICON_FONT="$DEFAULT_ICON_FONT"
+export SYSTEM_CPU_LABEL_FONT="$DEFAULT_LABEL_FONT"
+
+# Item - system.sh - memory
+export SYSTEM_MEMORY_ICON_FONT="$DEFAULT_ICON_FONT"
+export SYSTEM_MEMORY_LABEL_FONT="$DEFAULT_LABEL_FONT"
+
+# Item - system.sh - disk
+export SYSTEM_DISK_ICON_FONT="$DEFAULT_ICON_FONT"
+export SYSTEM_DISK_LABEL_FONT="$DEFAULT_LABEL_FONT"
+
+# Item - system.sh - net_in
+export SYSTEM_NET_IN_ICON_FONT="$DEFAULT_ICON_FONT"
+export SYSTEM_NET_IN_LABEL_FONT="$DEFAULT_LABEL_FONT"
+
+# Item - system.sh - net_out
+export SYSTEM_NET_OUT_ICON_FONT="$DEFAULT_ICON_FONT"
+export SYSTEM_NET_OUT_LABEL_FONT="$DEFAULT_LABEL_FONT"
+
+# Item - system.sh - net_out
+export SYSTEM_PING_ICON_FONT="$DEFAULT_ICON_FONT"
+export SYSTEM_PING_LABEL_FONT="$DEFAULT_LABEL_FONT"
+
+# Item - system.sh - brew
+export SYSTEM_BREW_ICON_FONT="$DEFAULT_ICON_FONT"
+export SYSTEM_BREW_LABEL_FONT="$DEFAULT_LABEL_FONT"
+
+# Item - yabai.sh
+export YABAI_ICON_FONT="$DEFAULT_ICON_FONT"
+export YABAI_LABEL_FONT="$DEFAULT_LABEL_FONT"
+
+# Item - calendar.sh
+export CALENDAR_LABEL_FONT="$DEFAULT_LABEL_FONT"

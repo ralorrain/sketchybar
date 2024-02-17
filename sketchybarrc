@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# Unload the macOS on screen indicator overlay for volume change
+launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
+
+# shellcheck disable=SC2034
+PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are stored
+ITEM_DIR="$CONFIG_DIR/items"     # Directory where the items are configured
+
+source "$CONFIG_DIR/theme.sh"    # Loads the theme
+source "$ITEM_DIR/bar.sh"        # Loads & initializes the bar
+source "$ITEM_DIR/apple.sh"      # Loads the apple item
+source "$ITEM_DIR/spaces.sh"     # Loads the spaces item
+source "$ITEM_DIR/front_app.sh"  # Loads the front_app item
+source "$ITEM_DIR/yabai.sh"      # Loads the yabai item
+source "$ITEM_DIR/calendar.sh"   # Loads the calendar item
+source "$ITEM_DIR/system.sh"     # Loads the system items
+source "$ITEM_DIR/volume.sh"     # Loads the volume item
+source "$ITEM_DIR/wifi.sh"       # Loads the wifi item
+source "$ITEM_DIR/battery.sh"    # Loads the battery item
+
+# Items - left to right
+apple     left
+separator left
+spaces    left
+padding   left 5
+front_app left
+yabai     left
+
+# Items - right to left
+padding        right 10
+calendar       right
+separator      right
+system_brew    right
+system_disk    right
+system_mem     right
+system_cpu     right
+system_net_out right
+system_net_in  right
+system_ping    right
+separator      right
+volume         right
+padding        right 1
+wifi           right
+battery        right
+
+# Forcing all item scripts to run (never do this outside of sketchybarrc)
+sketchybar --update
+sketchybar --trigger space_change # Initialize spaces window icons.

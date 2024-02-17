@@ -1,0 +1,39 @@
+# https://taskfile.dev
+
+version: '3'
+
+dotenv: ['.envrc', '.env']
+
+tasks:
+  default:
+    silent: true
+    cmds:
+      - task --list
+
+  theme.pick:
+    aliases: ['theme', 't']
+    desc: "Pick a theme."
+    preconditions:
+      - sh: command -v gum > /dev/null
+        msg: "Make sure gum is installed and in your path"
+    vars:
+      THEME_VALUEFILE: "/tmp/sketchy_theme.dat"
+      THEME:
+        sh: if [ -z $THEME ]; then ls -d themes/* | gum choose; else echo $THEME; fi
+    cmds:
+      - echo '{{.THEME}}' > '{{.THEME_VALUEFILE}}'
+      - sketchybar --reload
+
+  theme.clone:
+    aliases: ['clone', 'c']
+    desc: "Clone a theme."
+    preconditions:
+      - sh: command -v gum > /dev/null
+        msg: "Make sure gum is installed and in your path"
+    vars:
+      SOURCE_THEME:
+        sh: if [ -z $SOURCE_THEME ]; then ls -d themes/* | gum choose; else echo $SOURCE_THEME; fi
+      NAME_TARGET_THEME:
+        sh: if [ -z $NAME_TARGET_THEME ]; then gum input --placeholder "Enter the name of the new theme"; else echo $NAME_TARGET_THEME; fi
+    cmds:
+      - cp -r '{{.SOURCE_THEME}}' 'themes/{{.NAME_TARGET_THEME}}'
